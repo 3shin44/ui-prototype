@@ -2,15 +2,19 @@
 
 // 載入元件
 import PrototypeButton from '../src/components/PrototypeButton.vue';
+import PrototypeSwitcher from '../src/components/PrototypeSwitcher.vue';
 
 // 建立元件列表
 const componentsList = [
-    PrototypeButton
+    PrototypeButton,
+    PrototypeSwitcher
 ]
 
 // 匯出安裝語法
-export function install(Vue) {
+const install = function (Vue, opts = {}) {
     componentsList.forEach(component => {
         Vue.component(component.name, component)
     })
 }
+
+export default {install}

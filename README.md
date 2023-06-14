@@ -51,8 +51,8 @@ src/
 ```
 
 - package.json : 整包專案靠這玩意吃飯啊, 預設script功能詳列如下
-    - build-demo-page: 產生展示頁web檔案
-    - build-export-component: 打包元件檔案
+    - build-demo-page: 產生展示頁web檔案 (產生檔案夾預設為: dist_demoPage)
+    - build-export-component: 打包元件檔案 (產生檔案夾預設為: dist)
 - buildScripts: 打包/導出的相關指令皆存放於此
     - buildLib.js: 打包元件匯出指令
 - documents: 細節說明文件與自動產生的文件預設目錄

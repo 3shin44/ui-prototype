@@ -4,8 +4,8 @@
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build-demo-page": "vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib --name ui-prototype ./buildScripts/buildLib.js",
+    "build-demo-page": "vue-cli-service build --dest dist_demoPage",
+    "build-lib": "vue-cli-service build --target lib --name ui-prototype ./buildScripts/buildLib.js --file dist",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

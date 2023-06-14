@@ -9,7 +9,8 @@
     <div class="d-flex">
       <nav class="d-flex flex-column col-2 p-2 ui-prototype-shadow fill-height">
         <router-link to="EntryView" class="btn btn-light" :class="{ 'active' : $route.name == 'EntryView' }" >Entry</router-link>
-        <router-link to="PrototypeButtonView" class="btn btn-light" :class="{ 'active' : $route.name == 'PrototypeButtonView' }" >PrototypeButton</router-link>
+        <router-link to="PrototypeButtonView" class="btn btn-light" :class="{ 'active' : $route.name == 'PrototypeButtonView' }" >P-Button</router-link>
+        <router-link to="PrototypeSwitcherView" class="btn btn-light" :class="{ 'active' : $route.name == 'PrototypeSwitcherView' }" >P-Switcher</router-link>
         <hr>
         ©ui-prototype
       </nav>

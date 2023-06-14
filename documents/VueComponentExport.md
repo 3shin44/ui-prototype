@@ -49,4 +49,38 @@ Vue 打包語法 `vue-cli-service build --target lib —-name myLib [entry]`
 
 以本專案為例: `vue-cli-service build --target lib —-name ui-prototype ./buildScripts/buildLib.js`
 
-https://medium.com/@debbyji/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B-npm-%E5%A5%97%E4%BB%B6-%E6%8A%8A-vue-component-%E6%89%93%E5%8C%85%E5%88%B0-npm-%E5%90%A7-e5f9a6901c5c
+## 其他專案導入說明
+
+1. 透過NPM安裝套件
+
+2. 在main.js或對應入口檔案加入以下語法
+```
+import install from 'ui-prototype'
+Vue.use(install)
+```
+
+
+3. 此為全域安裝, 導入後在頁面中任何地方皆可直接使用, 不需再額外import, 例:
+```
+<template>
+    <div>
+        <PrototypeButton />
+    <div>
+</template>
+
+<script>
+    export default {
+      name: 'Foo',
+      props: {
+      },
+      components:{}
+    }
+</script>
+```
+
+
+### 參考資料
+
+- https://v2.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html
+- https://medium.com/@debbyji/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B-npm-%E5%A5%97%E4%BB%B6-%E6%8A%8A-vue-component-%E6%89%93%E5%8C%85%E5%88%B0-npm-%E5%90%A7-e5f9a6901c5c
+- https://github.com/ElemeFE/element/blob/dev/src/index.js
