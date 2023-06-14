@@ -1,17 +1,19 @@
 {
   "name": "ui-prototype",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build-demo-page": "vue-cli-service build --dest dist_demoPage",
+    "build-lib": "vue-cli-service build --target lib --name ui-prototype ./buildScripts/buildLib.js --file dist",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "bootstrap": "^5.3.0",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.13",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-router": "^3.6.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
