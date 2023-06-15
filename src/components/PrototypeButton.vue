@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import {methods} from "vue-docgen-cli/lib/compileTemplates";
 
 /**
  * PrototypeButton subtitle or description
