@@ -2,19 +2,28 @@
   <div id="app">
     <div class="p-2 ui-prototype-bg-dark">
       <h1>
-        <router-link to="EntryView" class="text-white text-decoration-none">UI Prototype Demo</router-link>
+        <router-link to="/" class="text-white text-decoration-none">UI Prototype Demo</router-link>
       </h1>
     </div>
 
     <div class="d-flex">
       <nav class="d-flex flex-column col-2 p-2 ui-prototype-shadow fill-height">
-        <router-link to="EntryView" class="btn btn-light" :class="{ 'active' : $route.name == 'EntryView' }" >Entry</router-link>
-        <router-link to="PrototypeButtonView" class="btn btn-light" :class="{ 'active' : $route.name == 'PrototypeButtonView' }" >P-Button</router-link>
-        <router-link to="PrototypeSwitcherView" class="btn btn-light" :class="{ 'active' : $route.name == 'PrototypeSwitcherView' }" >P-Switcher</router-link>
+        <template v-for="(item, index) in viewList">
+          <router-link
+            :key="index"
+            :to="item.path"
+            class="btn btn-outline-secondary mb-1"
+            :class="{ 'active' : $route.name == item.name }"
+          >
+            {{item.name}}
+          </router-link>
+        </template>
+
         <hr>
         ©ui-prototype
       </nav>
       <div class="col-10 p-2">
+        <EntryView v-if="$route.path === '/'" />
         <router-view />
       </div>
     </div>
@@ -22,10 +31,36 @@
 </template>
 
 <script>
+import {routes} from "@/router"
+import EntryView from "@/views/EntryView.vue";
 export default {
   name: 'App',
+  components: {EntryView},
+  data() {
+    return {
+      // 元件展示頁列表 (此處會直接使用Router中的route資料)
+      viewList: []
+    }
+  },
+  methods: {
+    // 檢查是否為未載入頁面狀態, 有載入清空
+    resetRouterView(){
+      if(this.$route.path != '/'){
+        this.$router.replace({path: '/'})
+      }
+    },
+    // 取得Route資料更新
+    getRoutes(){
+      this.viewList = routes
+    }
+  },
+  created() {
+    // update data from routes
+    this.getRoutes()
+  },
   mounted(){
-    // this.$router.push({name: 'EntryView'})
+    // reset to blank router-view
+    this.resetRouterView()
   }
 }
 </script>

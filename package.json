@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build-demo-page": "vue-cli-service build --dest dist_demoPage",
     "build-lib": "vue-cli-service build --target lib --name ui-prototype ./buildScripts/buildLib.js --file dist",
+    "build-compo-doc": "yarn vue-docgen -c ./buildScripts/docgen.config.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
