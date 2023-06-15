@@ -60,3 +60,8 @@ src/
 - src/views: VIEWS資料夾為頁面類, 命名方式為: 元件名稱+View, 用於開發測試與展示頁面使用
 - src/components: COMPONENTS資料夾為各元件檔案
 - router: Vue-router設定檔, 用於開發頁面與展示頁面切換分頁
+
+## 元件開發流程
+
+1. 建立新元件: 至src/compoenents下新增或由BlankComponent.vue複製一份新檔案
+2. 建立頁面:

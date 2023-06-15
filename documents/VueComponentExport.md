@@ -59,7 +59,6 @@ import install from 'ui-prototype'
 Vue.use(install)
 ```
 
-
 3. 此為全域安裝, 導入後在頁面中任何地方皆可直接使用, 不需再額外import, 例:
 ```
 <template>
