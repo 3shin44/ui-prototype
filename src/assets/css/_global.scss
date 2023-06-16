@@ -1,1 +1,30 @@
-//@import ""
+html, body{
+  background-color: var(--bs-light);
+}
+
+.ui-prototype-bg-dark{
+  background-color: rgb(66, 75, 92);
+}
+
+.ui-prototype-bg-light{
+  background-color: rgba(66, 75, 92, 0.1);
+}
+
+.ui-prototype-shadow{
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+}
+
+.ui-prototype-row{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1{
+  margin: 0;
+  font-size: 28px;
+}
+
+p{
+  margin: 0;
+}

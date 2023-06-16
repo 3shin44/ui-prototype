@@ -7,7 +7,18 @@
     </div>
 
     <div class="d-flex">
-      <nav class="d-flex flex-column col-2 p-2 ui-prototype-shadow fill-height">
+      <nav
+          class="main-col-nav d-flex flex-column ui-prototype-shadow"
+          :class="{ 'main-col-nav__acvitve': toggleNav }"
+      >
+        <!-- RWD Toggle Button -->
+        <button
+            class="btn btn-outline-secondary main-toggle-btn p-0"
+            @click="toggleNav = !toggleNav"
+        >{{ toggleNav ? '<' : '>'}}
+        </button>
+
+        <!-- List of routes -->
         <template v-for="(item, index) in viewList">
           <router-link
             :key="index"
@@ -22,7 +33,7 @@
         <hr>
         ©ui-prototype
       </nav>
-      <div class="col-10 p-2">
+      <div class="main-col-view p-3">
         <EntryView v-if="$route.path === '/'" />
         <router-view />
       </div>
@@ -39,7 +50,8 @@ export default {
   data() {
     return {
       // 元件展示頁列表 (此處會直接使用Router中的route資料)
-      viewList: []
+      viewList: [],
+      toggleNav: false
     }
   },
   methods: {
@@ -65,39 +77,53 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  html, body{
+<style lang="scss" scoped>
+
+  .main-col-nav{
+    padding: 50px 0.5rem 0.5rem 0.5rem;
+    top: 0;
+    position: fixed;
+    width: 190px;
+    min-height: 100%;
     background-color: var(--bs-light);
+    transform: translateX(-100%);
+    transition: .3s;
+  }
+  .main-col-nav__acvitve{
+    transform: translateX(0);
   }
 
-  .ui-prototype-bg-dark{
-    background-color: rgb(66, 75, 92);
-  }
-
-  .ui-prototype-bg-light{
-    background-color: rgba(66, 75, 92, 0.1);
-  }
-
-  .ui-prototype-shadow{
-    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
-  }
-
-  .ui-prototype-row{
+  .main-col-view{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
   }
 
-  h1{
-    margin: 0;
-    font-size: 28px;
+  .main-toggle-btn{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: var(--bs-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
   }
 
-  p{
-    margin: 0;
+  @media screen and (min-width: 992px) {
+    .main-col-nav{
+      position: relative;
+      transform: unset;
+      padding: 0.5rem;
+      min-width: 190px;
+      min-height: calc(100vh - 50px);
+      width: 16.66667%;
+    }
+    .main-toggle-btn{
+      display: none;
+    }
+    .main-col-view{
+      width: 83.33333%;
+    }
   }
 
-  .fill-height{
-    height: calc(100vh - 70px);
-  }
 </style>

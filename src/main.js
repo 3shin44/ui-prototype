@@ -19,6 +19,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import VueRouter from "vue-router";
 Vue.use(ElementUI, { locale })
 
+// import custom CSS
+import '@/assets/css/index.scss'
+
 new Vue({
   render: h => h(App),
   router
