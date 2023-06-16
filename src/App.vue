@@ -83,6 +83,7 @@ export default {
     padding: 50px 0.5rem 0.5rem 0.5rem;
     top: 0;
     position: fixed;
+    z-index: 9;
     width: 190px;
     min-height: 100%;
     background-color: var(--bs-light);
