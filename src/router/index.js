@@ -4,9 +4,9 @@
 import VueRouter from 'vue-router'
 
 //  View pages of component
-import EntryView from "@/views/EntryView.vue"
 import PrototypeButtonView from "@/views/PrototypeButtonView.vue"
-import PrototypeSwitcherView from "@/views/PrototypeSwitcherView.vue";
+import PrototypeSwitcherView from "@/views/PrototypeSwitcherView.vue"
+import PrototypeTableView from "@/views/PrototypeTableView.vue"
 
 // Router path config
 const routes = [
@@ -19,6 +19,11 @@ const routes = [
         path: '/PrototypeSwitcherView',
         name: 'P-SwitcherView',
         component: PrototypeSwitcherView
+    },
+    {
+        path: '/PrototypeTableView',
+        name: 'P-TableView',
+        component: PrototypeTableView
     }
 ]
 const router = new VueRouter({

@@ -8,7 +8,7 @@
 
     <div class="d-flex">
       <nav
-          class="main-col-nav d-flex flex-column ui-prototype-shadow"
+          class="main-col-nav d-flex flex-column"
           :class="{ 'main-col-nav__acvitve': toggleNav }"
       >
         <!-- RWD Toggle Button -->
@@ -33,7 +33,7 @@
         <hr>
         ©ui-prototype
       </nav>
-      <div class="main-col-view p-3">
+      <div class="main-col-view p-4">
         <EntryView v-if="$route.path === '/'" />
         <router-view />
       </div>
@@ -80,7 +80,7 @@ export default {
 <style lang="scss" scoped>
 
   .main-col-nav{
-    padding: 50px 0.5rem 0.5rem 0.5rem;
+    padding: 55px 0.5rem 0.5rem 0.5rem;
     top: 0;
     position: fixed;
     z-index: 9;
@@ -89,6 +89,7 @@ export default {
     background-color: var(--bs-light);
     transform: translateX(-100%);
     transition: .3s;
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
   }
   .main-col-nav__acvitve{
     transform: translateX(0);
@@ -114,10 +115,10 @@ export default {
     .main-col-nav{
       position: relative;
       transform: unset;
-      padding: 0.5rem;
+      padding: 1.25rem 0.5rem;
       min-width: 190px;
-      min-height: calc(100vh - 50px);
       width: 16.66667%;
+      box-shadow: unset;
     }
     .main-toggle-btn{
       display: none;
