@@ -15,6 +15,11 @@
 - 透過NPM安裝導入元件
 - 若有擴展需求提供指令產生未封裝.vue檔案, 提供改寫使用
 
+其他說明文檔 (/documents)
+
+- VueComponentExport.md: 本專案元件導出與導入安裝說明
+- VueDocGen.md: Vue-docgen 套件設定說明
+
 ## 系統架構說明
 
 - 使用vue導出元件方式

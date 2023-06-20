@@ -1,12 +1,23 @@
 <template>
   <div class="prototype-table-view">
     <h2>PrototypeTable DEV</h2>
-    <PrototypeTable :table-data="tableData" :headers="headers" :number-per-page="nubmerPerPage"  />
+    <PrototypeTable 
+      :table-data="tableData" 
+      :headers="headers" 
+      :number-per-page="nubmerPerPage" 
+      @row-click="rowClick"
+      :to-page-no="toPageNo"
+    />
 
     <div class="p-table-container pt-3 mt-3 border">
-      <p class="text-center">Mock data proper (JSON FORMAT)</p>
+      <p class="text-center">Mock data (JSON)</p>
       <div class="d-flex p-3 align-items-center justify-content-center">
-        <button class="btn btn-primary" @click="updateTable">UPDATE</button>
+        <button 
+          class="btn btn-primary" 
+          @click="updateTable"
+        >
+          UPDATE
+        </button>
       </div>
       <div class="d-flex">
         <div class="p-table-textarea p-1">
@@ -21,7 +32,17 @@
           Table Config
           <div>
             - Nubmer per page
-            <el-input v-model="mockNubmerPerPage" type="number"></el-input>
+            <el-input 
+              v-model="mockNubmerPerPage" 
+              type="number"
+              min="1"
+            />
+            - To Page No
+            <el-input 
+              v-model="mockToPageNo" 
+              type="number"
+              min="1"
+            />
           </div>
         </div>
       </div>
@@ -112,18 +133,26 @@ export default {
         }
       ],
       nubmerPerPage: 10,
+      toPageNo: 1,
+
       // mock
       mockData: "",
       mockHeaders: "",
-      mockNubmerPerPage: 10
+      mockNubmerPerPage: 10,
+      mockToPageNo: 1
     }
   },
   methods: {
     // 更新參數
     updateTable(){
-      this.tableData = JSON.parse(this.mockData)
-      this.headers = JSON.parse(this.mockHeaders)
+      this.tableData = this.mockData ? JSON.parse(this.mockData) : []
+      this.headers = this.mockHeaders ? JSON.parse(this.mockHeaders) : [] 
       this.nubmerPerPage = Number(this.mockNubmerPerPage)
+      this.toPageNo = Number(this.mockToPageNo)
+    },
+    // 顯示點擊資料
+    rowClick(rowItem){
+      console.log(rowItem)
     }
   },
   mounted(){

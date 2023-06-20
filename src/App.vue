@@ -8,14 +8,14 @@
 
     <div class="d-flex">
       <nav
-          class="main-col-nav d-flex flex-column"
-          :class="{ 'main-col-nav__acvitve': toggleNav }"
+        class="main-col-nav d-flex flex-column"
+        :class="{ 'main-col-nav__acvitve': toggleNav }"
       >
         <!-- RWD Toggle Button -->
         <button
-            class="btn btn-outline-secondary main-toggle-btn p-0"
-            @click="toggleNav = !toggleNav"
-        >{{ toggleNav ? '<' : '>'}}
+          class="btn btn-outline-secondary main-toggle-btn p-0"
+          @click="toggleNav = !toggleNav"
+        >{{ toggleNav ? '<' : '&emsp;>'}}
         </button>
 
         <!-- List of routes -->
