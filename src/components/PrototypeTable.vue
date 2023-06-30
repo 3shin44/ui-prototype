@@ -16,6 +16,7 @@
               :width="item.width"
               :min-width="item.minWidth"
               :key="index"
+              v-bind="item.colAttrs"
           >
             <template slot-scope="scope">
               <input type="checkbox" v-model="scope.row.checked">
@@ -29,6 +30,7 @@
               :width="item.width"
               :min-width="item.minWidth"
               :key="index"
+              v-bind="item.colAttrs"
           >
           </el-table-column>
         </template>

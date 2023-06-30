@@ -7,9 +7,15 @@ import VueRouter from 'vue-router'
 import PrototypeButtonView from "@/views/PrototypeButtonView.vue"
 import PrototypeSwitcherView from "@/views/PrototypeSwitcherView.vue"
 import PrototypeTableView from "@/views/PrototypeTableView.vue"
+import PrototypeTools from "@/views/PrototypeTools.vue"
 
 // Router path config
 const routes = [
+    {
+        path: '/PrototypeTools',
+        name: 'P-Tools',
+        component: PrototypeTools
+    },
     {
         path: '/PrototypeButtonView',
         name: 'P-ButtonView',
@@ -25,6 +31,7 @@ const routes = [
         name: 'P-TableView',
         component: PrototypeTableView
     }
+    
 ]
 const router = new VueRouter({
     routes

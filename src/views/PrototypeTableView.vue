@@ -121,7 +121,11 @@ export default {
       headers: [
         {
           "label": "Function ID",
-          "data": "ID"
+          "data": "ID",
+          "colAttrs": {
+            sortable: true,
+            align: 'center'
+          }
         },
         {
           "label": "Function Name",
